@@ -1,0 +1,27 @@
+.table{
+    table{
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        vertical-align: middle;
+        border: $basicBorder;
+        table-layout: fixed;
+    }
+    
+    th, td{
+        border: $basicBorder;
+    }
+
+    th{
+        border-bottom: 17px solid $baseBlueColor;
+        height: 67px;
+    }
+
+    th.time{
+        width: 50px;
+    }
+
+    td{
+        height: 57px;        
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "achieve_schools_classroom_board",
+  "version": "1.0.0",
+  "description": "Custom page to server as a board for the students to see their classrooms in that day.",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icavalheiro/al_classroom_board.git"
+  },
+  "keywords": [
+    "achieve",
+    "languages"
+  ],
+  "author": "Ivan S. Cavalheiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/icavalheiro/al_classroom_board/issues"
+  },
+  "homepage": "https://github.com/icavalheiro/al_classroom_board#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0"
+  }
+}

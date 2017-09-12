@@ -1,0 +1,36 @@
+.header{
+    height: 150px;
+    background-color: white;
+    border: $basicBorder;
+
+    .header-text{
+        font-size: 43px;
+        color: brown;
+        position: absolute;
+        left: 40px;
+        text-align: center;
+        width: 200px;
+        line-height: 40px;
+        top: 15px;
+        background-color: white;
+        z-index: 2;
+    }
+    
+    .city-img{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        width: 400px;
+        z-index: 1;
+    }
+
+    .achieve-logo{
+        position: absolute;
+        right: 25px;
+        top: 15px;
+        width: 200px;
+        z-index: 2;
+    }
+}
+
