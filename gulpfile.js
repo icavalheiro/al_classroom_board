@@ -14,6 +14,21 @@ gulp.task('img', () => {
     .pipe(gulp.dest('dist/images'));
 });
 
+gulp.task('electron_config', () => {
+    return gulp.src('src/package.json')
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('electron', () => {
+    return gulp.src('src/main.js')
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('lib', () => {
+    return gulp.src('src/lib/*.*')
+    .pipe(gulp.dest('dist/lib'));
+});
+
 gulp.task('sass', () =>{
     return gulp.src('src/styles/main.scss')
     .pipe(sourcemaps.init())
@@ -34,9 +49,9 @@ gulp.task('js', () => {
     .pipe(gulp.dest('dist/scripts'));
 });
 
-gulp.task('default', ['js', 'sass', 'img', 'html'], () => {
+gulp.task('default', ['js', 'sass', 'img', 'html', 'lib', 'electron', 'electron_config'], () => {
     console.log('Watching src dir...');
-    return gulp.watch('src/**/*.*', ['js', 'sass', 'img', 'html'], () =>{
+    return gulp.watch('src/**/*.*', ['js', 'sass', 'img', 'html', 'lib', 'electron', 'electron_config'], () =>{
         console.log('done');
     });
 });

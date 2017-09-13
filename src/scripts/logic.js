@@ -29,7 +29,7 @@ function enableEditing(){
         else
             e.html(inputValue.split('\n').join('<br/>'));
 
-        Cookies.set('al-rooms-cookie', table);
+        /*Cookies.set('al-rooms-cookie', table);*/
     }
 
     function initiateEditing(e){
@@ -65,7 +65,7 @@ function enableEditing(){
 }
 
 $(document).ready(function () {
-    table = Cookies.get('al-rooms-cookie') || [
+    table = /*Cookies.get('al-rooms-cookie') ||*/ [
         [ '8:30', '', '', '', '', '', '', ''],
         ['10:00', '', '', '', '', '', '', ''],
         ['13:00', '', '', '', '', '', '', ''],

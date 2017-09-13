@@ -4,7 +4,8 @@
   "description": "Custom page to server as a board for the students to see their classrooms in that day.",
   "main": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "electron" : "electron dist/"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/icavalheiro/al_classroom_board#readme",
   "devDependencies": {
+    "electron": "1.7.6",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
