@@ -1,13 +1,4 @@
-var table = [
-    [ '8:30', '', '', '', '', '', '', ''],
-    ['10:00', '', '', '', '', '', '', ''],
-    ['13:00', '', '', '', '', '', '', ''],
-    ['14:00', '', '', '', '', '', '', ''],
-    ['15:30', '', '', '', '', '', '', ''],
-    ['17:00', '', '', '', '', '', '', ''],
-    ['18:30', '', '', '', '', '', '', ''],
-    ['20:00', '', '', '', '', '', '', '']
-];
+var table = null;
 
 
 function createTable(){
@@ -37,6 +28,8 @@ function enableEditing(){
             e.text(inputValue);
         else
             e.html(inputValue.split('\n').join('<br/>'));
+
+        Cookies.set('al-rooms-cookie', table);
     }
 
     function initiateEditing(e){
@@ -44,7 +37,10 @@ function enableEditing(){
         var currentText = table[idSplit[0]][idSplit[1]];
         e.empty();
         e.append('<textarea type="textarea"/></textarea>');
-        e.find('textarea').focus().val(currentText);
+        e.find('textarea').focus().focusout(function(){
+            currentElement = null;
+            terminateEditing($($(this).parent()));
+        }).val(currentText);
     }
 
 
@@ -69,6 +65,16 @@ function enableEditing(){
 }
 
 $(document).ready(function () {
+    table = Cookies.get('al-rooms-cookie') || [
+        [ '8:30', '', '', '', '', '', '', ''],
+        ['10:00', '', '', '', '', '', '', ''],
+        ['13:00', '', '', '', '', '', '', ''],
+        ['14:00', '', '', '', '', '', '', ''],
+        ['15:30', '', '', '', '', '', '', ''],
+        ['17:00', '', '', '', '', '', '', ''],
+        ['18:30', '', '', '', '', '', '', ''],
+        ['20:00', '', '', '', '', '', '', '']
+    ];
     createTable();
     enableEditing();
 });
