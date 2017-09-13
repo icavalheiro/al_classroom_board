@@ -14,14 +14,78 @@
 
     th{
         border-bottom: 17px solid $baseBlueColor;
-        height: 67px;
+        height: 90px;
+        text-align: left;
+        padding-left: 25px; 
+        font-weight: bold;
+        font-size: 22px;
     }
 
     th.time{
         width: 50px;
+        text-align: center;
+        padding-left: 0; 
+        font-size: 16px;
     }
 
     td{
         height: 57px;        
+    }
+
+    th.dubai{
+        background: 
+        url("../images/dubai.png") 
+        right 
+        center 
+        no-repeat;
+        background-size: 28px;
+    }
+    
+    th.san-francisco{
+        background: 
+        url("../images/san francisco.png") 
+        right 
+        center 
+        no-repeat;
+    }
+
+    th.paris{
+        background: 
+        url("../images/paris.png")
+        right
+        center
+        no-repeat;
+    }
+
+    th.vancouver{
+        background: 
+        url("../images/vancover.png")
+        right
+        center
+        no-repeat;
+    }
+
+    th.sydney{
+        background: 
+        url("../images/sidney.png")
+        right
+        center
+        no-repeat;
+    }
+
+    th.new-york{
+        background: 
+        url("../images/image7.png")
+        right
+        center
+        no-repeat;
+    }
+
+    th.london{
+        background: 
+        url("../images/london.png")
+        right
+        center
+        no-repeat;
     }
 }
