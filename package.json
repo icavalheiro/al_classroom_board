@@ -5,6 +5,8 @@
   "main": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch",
+    "preelectron": "gulp build",
     "electron": "electron dist/",
     "prepackage": "gulp build",
     "package": "electron-packager dist \"Achieve Language Rooms Board\" --platform=win32 --arch=ia32 --icon=\"dist/images/icon.ico\""
