@@ -14,3 +14,14 @@ $basicBorder : 1px solid $baseBlueColor;
 
 @import 'header';
 @import 'table';
+
+#reset-btn{
+    background-color: white;
+    width: 90px;
+    height: 35px;
+    border: solid 1px grey;
+    position: fixed;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}

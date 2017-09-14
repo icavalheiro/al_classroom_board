@@ -8,7 +8,10 @@ function createTable(){
         var html = '<tr>';
         html += '<td>' + row[0] + '</td>';
         for(var j = 1; j < row.length; j++){
-            html += '<td class="room-cell" id="' + i + '-' + j + '">'+row[j]+'</td>';
+            if(row[j].indexOf('\n') >= 0)
+                html += '<td class="room-cell" id="' + i + '-' + j + '">'+row[j].split('\n').join('<br/>')+'</td>';
+            else
+                html += '<td class="room-cell" id="' + i + '-' + j + '">'+row[j]+'</td>';
         }
         html += '<tr>';
 
@@ -29,7 +32,7 @@ function enableEditing(){
         else
             e.html(inputValue.split('\n').join('<br/>'));
 
-        /*Cookies.set('al-rooms-cookie', table);*/
+        database(table);
     }
 
     function initiateEditing(e){
@@ -64,8 +67,8 @@ function enableEditing(){
     });
 }
 
-$(document).ready(function () {
-    table = /*Cookies.get('al-rooms-cookie') ||*/ [
+function getEmptyTable(){
+    return [
         [ '8:30', '', '', '', '', '', '', ''],
         ['10:00', '', '', '', '', '', '', ''],
         ['13:00', '', '', '', '', '', '', ''],
@@ -75,6 +78,15 @@ $(document).ready(function () {
         ['18:30', '', '', '', '', '', '', ''],
         ['20:00', '', '', '', '', '', '', '']
     ];
+}
+
+function resetTable(){
+    database(getEmptyTable());
+    location.reload();
+}
+
+$(document).ready(function () {
+    table = database() || getEmptyTable();
     createTable();
     enableEditing();
 });
