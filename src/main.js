@@ -12,8 +12,17 @@ const url = require('url')
 let mainWindow
 
 function createWindow () {
+  var display = electron.screen.getAllDisplays()[1] || electron.screen.getAllDisplays()[0];
+
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  mainWindow = new BrowserWindow(
+    {
+      width: 800, 
+      height: 600,
+      x: display.bounds.x,
+      y: display.bounds.y
+    }
+  );
 
   mainWindow.setIcon(electron.nativeImage.createFromPath(__dirname + '/images/icon.png'));
 
@@ -36,6 +45,7 @@ function createWindow () {
   })
 
   //mainWindow.setMenu(null);
+  mainWindow.setFullScreen(true);
 }
 
 // This method will be called when Electron has finished
