@@ -49,9 +49,13 @@ gulp.task('js', () => {
     .pipe(gulp.dest('dist/scripts'));
 });
 
-gulp.task('default', ['js', 'sass', 'img', 'html', 'lib', 'electron', 'electron_config'], () => {
+gulp.task('build', ['js', 'sass', 'img', 'html', 'lib', 'electron', 'electron_config']);
+
+gulp.task('watch', ['build'], () => {
     console.log('Watching src dir...');
-    return gulp.watch('src/**/*.*', ['js', 'sass', 'img', 'html', 'lib', 'electron', 'electron_config'], () =>{
+    return gulp.watch('src/**/*.*', ['build'], () =>{
         console.log('done');
     });
 });
+
+gulp.task('default', ['build']);
