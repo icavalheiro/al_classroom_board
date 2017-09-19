@@ -90,3 +90,54 @@ $(document).ready(function () {
     createTable();
     enableEditing();
 });
+
+var dot = false;
+
+function getDayWeekName(dayWeek){
+    var names = [
+        'Sunday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday'
+    ];
+    return names[dayWeek];
+}
+
+function getDayMonthName(dayMonth){
+    if(dayMonth == 1)
+        return 'st';
+    if(dayMonth == 2)
+        return 'nd';
+    if(dayMonth == 3)
+        return 'rd';
+    return 'th';
+}
+
+function getMinutesName(minutes){
+    if(minutes < 10)
+        return '0' + minutes;
+    return minutes;
+}
+
+function updateDate(){
+    dot = !dot;
+    var time = new Date();
+    var dayWeek = getDayWeekName(time.getDay());
+    var dayMonth = time.getDate();
+    var hour = time.getHours();
+    var isPm = hour > 12;
+    if(isPm)
+        hour -= 12;
+    var minutes = time.getMinutes();
+
+    var text = dayWeek + ' ' +
+    dayMonth + getDayMonthName(dayMonth)+ ', ' +
+    hour + ((dot) ? ':' : '<span style="color:white">:</span>') + 
+    getMinutesName(minutes) + ' ' +
+    ((isPm) ? 'PM' : 'AM');
+    $('div.time').html(text);
+}
+updateDate();
+setInterval(updateDate, 1000);
