@@ -1,5 +1,5 @@
 var table = null;
-
+var ordinal = require('ordinal');
 
 function createTable(){
     var domTable = $('table');
@@ -106,13 +106,7 @@ function getDayWeekName(dayWeek){
 }
 
 function getDayMonthName(dayMonth){
-    if(dayMonth == 1)
-        return 'st';
-    if(dayMonth == 2)
-        return 'nd';
-    if(dayMonth == 3)
-        return 'rd';
-    return 'th';
+    return ordinal(dayMonth);
 }
 
 function getMinutesName(minutes){
@@ -133,7 +127,7 @@ function updateDate(){
     var minutes = time.getMinutes();
 
     var text = dayWeek + ' ' +
-    dayMonth + getDayMonthName(dayMonth)+ ', ' +
+    getDayMonthName(dayMonth)+ ', ' +
     hour + ((dot) ? ':' : '<span style="color:white">:</span>') + 
     getMinutesName(minutes) + ' ' +
     ((isPm) ? 'PM' : 'AM');
