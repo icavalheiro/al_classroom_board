@@ -2,5 +2,8 @@
   "name": "dist",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js"
+  "main": "main.js",
+  "dependencies": {
+    "ordinal": "^1.0.2"
+  }
 }

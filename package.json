@@ -8,7 +8,7 @@
     "watch": "gulp watch",
     "preelectron": "gulp build",
     "electron": "electron dist/",
-    "prepackage": "gulp build",
+    "prepackage": "gulp build && cd dist && npm i && cd ..",
     "package": "electron-packager dist \"Achieve Language Rooms Board\" --platform=win32 --arch=ia32 --icon=\"dist/images/icon.ico\""
   },
   "repository": {
