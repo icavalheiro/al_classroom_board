@@ -96,7 +96,7 @@ var dot = false;
 function getDayWeekName(dayWeek){
     var names = [
         'Sunday',
-        'Moonday',
+        'Monday',
         'Tuesday',
         'Wednesday',
         'Thursday',
