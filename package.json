@@ -5,8 +5,11 @@
   "main": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "gulp watch",
-    "preelectron": "gulp build",
+    "watch": "",
+    "prebuild": "rm -rf dist",
+    "build": "parcel build src/index.html src/main.js -t electron -d ./dist --bundle-node-modules",
+    "postbuild" : "cp src/package.json dist/package.json",
+    "preelectron": "yarn build",
     "electron": "electron dist/",
     "prepackage": "gulp build && cd dist && npm i && cd ..",
     "package": "electron-packager dist \"Achieve Language Rooms Board\" --platform=win32 --arch=ia32 --icon=\"dist/images/icon.ico\" --overwrite"
@@ -34,5 +37,8 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "ordinal": "^1.0.2"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
   }
 }
