@@ -24,7 +24,9 @@ function createWindow () {
     }
   );
 
-  mainWindow.setIcon(electron.nativeImage.createFromPath(__dirname + '/images/icon.png'));
+  if(mainWindow.setIcon){
+    mainWindow.setIcon(electron.nativeImage.createFromPath(__dirname + '/images/icon.png'));
+  }
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
