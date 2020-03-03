@@ -16,15 +16,13 @@
         color: $baseBlueColor;
         border-bottom: 17px solid $baseBlueColor;
         height: 90px;
-        text-align: left;
-        padding-left: 25px; 
         font-weight: bold;
         font-size: 22px;
+        text-align: center;
     }
 
     th.time{
         width: 50px;
-        text-align: center;
         padding-left: 0; 
         font-size: 16px;
     }
